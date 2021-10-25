@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+</style>
+<script src="jquery-3.6.0.min.js"></script>
+ <script>
+  $(document).ready(function(){
+    $('#btn').attr('disabled',true);
+
+     $('#name').keyup(function(){
+    if($(this).val().length !=0){
+        $('#btn').attr('disabled', false);
+    }
+    else
+    {
+        $('#btn').attr('disabled', true); 
+        
+    }
+     })
+
+     $("#btn").click(function(){
+    var mytxtcontent = $("#name").val();
+    $("#greetings").html('Hi, ' + mytxtcontent);
+    });
+
+})
+</script>
+</head>
+<body>
+
+    <h1 id="greetings">Can i have your name please</h1>
+    <form action="form">
+        <label for="fname">LastName</label>
+        <input type="text" name="fname" id="name">
+        <button id="btn">Valid</button>
+    </form>
+</body>
+</html>
